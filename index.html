@@ -51,7 +51,7 @@
 			* @tip Set the border for your email.
 			*/
 			#templateContainer{
-				/*@editable*/ border:1px solid #BBBBBB;
+				/*@editable*/ border:0px solid #BBBBBB;
 			}
 
 			/**
@@ -151,8 +151,8 @@
 			* @theme header
 			*/
 			#templatePreheader{
-				/*@editable*/ background-color:#F4F4F4;
-				/*@editable*/ border-bottom:1px solid #CCCCCC;
+				/*@editable*/ background-color:#FFFFFF;
+				/*@editable*/ border-bottom:1px solid #f2f2f2;
 			}
 
 			/**
@@ -165,7 +165,7 @@
 				/*@editable*/ font-family:Helvetica;
 				/*@editable*/ font-size:10px;
 				/*@editable*/ line-height:125%;
-				/*@editable*/ text-align:left;
+				/*@editable*/;
 			}
 
 			/**
@@ -186,9 +186,9 @@
 			* @theme header
 			*/
 			#templateHeader{
-				/*@editable*/ background-color:#F4F4F4;
-				/*@editable*/ border-top:1px solid #FFFFFF;
-				/*@editable*/ border-bottom:1px solid #CCCCCC;
+				/*@editable*/ background-color:#FFFFFF;
+				/*@editable*/ border-top:0;
+				/*@editable*/ 
 			}
 
 			/**
@@ -202,11 +202,11 @@
 				/*@editable*/ font-size:20px;
 				/*@editable*/ font-weight:bold;
 				/*@editable*/ line-height:100%;
-				/*@editable*/ padding-top:0;
-				/*@editable*/ padding-right:0;
-				/*@editable*/ padding-bottom:0;
-				/*@editable*/ padding-left:0;
-				/*@editable*/ text-align:left;
+				/*@editable*/ padding-top:20px;
+				/*@editable*/ padding-right:20px;
+				/*@editable*/ padding-bottom:20px;
+				/*@editable*/ padding-left:20px;
+				/*@editable*/ text-align:center;
 				/*@editable*/ vertical-align:middle;
 			}
 
@@ -234,8 +234,8 @@
 			* @tip Set the background color and borders for your email's body area.
 			*/
 			#templateBody{
-				/*@editable*/ background-color:#F4F4F4;
-				/*@editable*/ border-top:1px solid #FFFFFF;
+				/*@editable*/ background-color:#FFFFFF;
+				/*@editable*/ border-top:1px solid #f2f2f2;
 				/*@editable*/ border-bottom:1px solid #CCCCCC;
 			}
 
@@ -250,10 +250,7 @@
 				/*@editable*/ font-family:Helvetica;
 				/*@editable*/ font-size:16px;
 				/*@editable*/ line-height:150%;
-				padding-top:20px;
-				padding-right:20px;
-				padding-bottom:20px;
-				padding-left:20px;
+
 				/*@editable*/ text-align:left;
 			}
 
@@ -271,7 +268,8 @@
 			.bodyContent img{
 				display:inline;
 				height:auto;
-				max-width:560px;
+				max-width:600px;
+                width:100%;
 			}
 
 			/* ========== Column Styles ========== */
@@ -552,16 +550,15 @@
                 	<td align="center" valign="top" id="bodyCell">
                     	<!-- BEGIN TEMPLATE // -->
                     	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
-                        	<tr>
+
+                            <!-- PRE-HEADER START -->
+                            <tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN PREHEADER // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
                                         <tr>
-                                            <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;" mc:edit="preheader_content00">
-                                                Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
-                                            </td>
                                             <!-- *|IFNOT:ARCHIVE_PAGE|* -->
-                                            <td valign="top" width="180" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;" mc:edit="preheader_content01">
+                                            <td valign="top" width="180" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;text-align:right" mc:edit="preheader_content01">
                                                 Email not displaying correctly?<br /><a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
                                             </td>
                                             <!-- *|END:IF|* -->
@@ -570,39 +567,102 @@
                                     <!-- // END PREHEADER -->
                                 </td>
                             </tr>
+                            <!-- PRE-HEADER END  -->
+
+                            <!-- HEADER START  -->
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN HEADER // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
                                         <tr>
                                             <td valign="top" class="headerContent">
-                                            	<img src="http://gallery.mailchimp.com/2425ea8ad3/images/header_placeholder_600px.png" style="max-width:600px;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
+                                            	<a href="#">
+                                                    <img src="img/logo.png" style="max-width:200px;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
+                                                </a>
                                             </td>
                                         </tr>
                                     </table>
                                     <!-- // END HEADER -->
                                 </td>
                             </tr>
+                            <!-- HEADER END  -->
+
+                            <!-- BODY START  -->
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN BODY // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
                                         <tr>
                                             <td valign="top" class="bodyContent" mc:edit="body_content">
-                                                <h1>Designing Your Template</h1>
-                                                <h3>Creating a good-looking email is simple</h3>
-                                                Customize your template by clicking on the style editor tabs up above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content.
-                                                <br />
-                                                <br />
-                                                <h2>Styling Your Content</h2>
-                                                <h4>Make your email easy to read</h4>
-                                                After you enter your content, highlight the text you want to style and select the options you set in the style editor in the "<em>styles</em>" drop down box. Want to <a href="http://www.mailchimp.com/kb/article/im-using-the-style-designer-and-i-cant-get-my-formatting-to-change" target="_blank">get rid of styling on a bit of text</a>, but having trouble doing it? Just use the "<em>remove formatting</em>" button to strip the text of any formatting and reset your style. 
+                                                <img src="img/HeaderImage.png" alt="Banner Image">
                                             </td>
                                         </tr>
                                     </table>
                                     <!-- // END BODY -->
                                 </td>
                             </tr>
+                            <!-- BODY END  -->
+
+                            <!-- BODY BOTTOM CONTENT START -->
+                            <tr>
+                                <td valign="top" align="center">
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" class="botyBottom" style="background-color: #fff">
+                                        <tr>
+                                            <td valign="top" align="center" style="padding-top:30px;padding-bottom:30px;padding-right: 15px;padding-left:15px;font-size: 16px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height: 1.4;"> 
+                                                <h1 style="text-align:center;text-transform:capitalize;line-height:1.3;font-size: 26px;padding-bottom:20px">Walmart sings one of the largest community solar agreements with nexamp</h1>
+                                                Nexamp recently sign lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias ducimus aspernatur dolorum deserunt. Velit quis repellendus modi, unde ea, inventore numquam voluptatum tempora fugit delectus in? Quaerat, corporis molestias!
+                                                <span style="height:20px;display: block;"></span>
+                                                <button style="background-color: #FF9900;color:#fff;text-transform: uppercase;display:block;width:180px;font-weight: bold;padding:12px 20px;border: none;cursor: pointer;font-size: 16px; letter-spacing: 2px;">Learn More</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="padding-top:30px;padding-bottom:30px;padding-right: 15px;padding-left:15px;font-size: 16px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height: 1.4;">
+                                                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top">
+                                                           <a href="#"><img src="img/circle1.png" alt="Man Image" style=width:170px;max-width:100%"></a>
+                                                        </td>
+                                                        <td style="width:20px">
+
+                                                        </td>
+                                                        <td valign="top">
+                                                            <h2 style="font-size: 22px;text-transform: capitalize;font-weight: bold;line-height: 1.3;">Generate Capital Investor $240 Million in Nexamp</h2>
+                                                            This August generate Capital lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis autem modi provident laborum aut ipsum cum eveniet, nostrum quas possimus!
+                                                            <span style="height:20px;display:block"></span>
+                                                            <button style="background-color: #FF9900;color:#fff;text-transform: uppercase;display:block;width:100%;font-weight: bold;padding:12px 20px;border: none;cursor: pointer;font-size: 16px; letter-spacing: 2px;">read more</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="padding-top:30px;padding-bottom:30px;padding-right: 15px;padding-left:15px;font-size: 16px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height: 1.4;">
+                                                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top">
+                                                           <a href="#"><img src="img/circle2.png" alt="Man Image" style="width:170px;max-width:100%"></a>
+                                                        </td>
+                                                        <td style="width:20px">
+
+                                                        </td>
+                                                        <td>
+                                                            <h2 style="font-size: 22px;text-transform: capitalize;font-weight: bold;line-height: 1.3;">Meet a subscribe!</h2>
+                                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis autem modi provident laborum aut ipsum cum eveniet, nostrum quas possimus!
+                                                            <span style="height:20px;display:block"></span>
+                                                            <button style="background-color: #FF9900;color:#fff;text-transform: uppercase;display:block;width:100%;font-weight: bold;padding:12px 20px;border: none;cursor: pointer;font-size: 16px; letter-spacing: 2px;">read more</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- BODY BOTTOM CONTENT END -->
+                            <tr>
+
+                            </tr>
+
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN COLUMNS // -->
